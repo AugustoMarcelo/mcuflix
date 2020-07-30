@@ -18,8 +18,11 @@ Project developed based on the week of immersion. You can access the project [he
     - ReactJS
     - Typescript
     - react-router-dom
+    - styled-components
     - axios
     - react-slick (to make sliders)
+    - uuidv4 (to generate unique ids)
+    - localstorage
 
 ---
 
@@ -35,7 +38,7 @@ Project developed based on the week of immersion. You can access the project [he
   ```bash
     # Accesing web project
     cd mcuflix
-    
+
     # Running web project
     yarn start
   ```
