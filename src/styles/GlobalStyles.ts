@@ -13,10 +13,8 @@ export default createGlobalStyle`
     --black: #000000;
     --blackLighter: #9E9E9E;
     --grayLight: #F5F5F5;
-    --grayMedium: #e5e5e5; 
+    --grayMedium: #e5e5e5;
     --white: #FFFFFF;
-    --frontEnd: #6BD1FF;
-    --backEnd: #00C86F;
   }
 
   #root {
@@ -37,6 +35,10 @@ export default createGlobalStyle`
     @media (max-width: 800px) {
       padding-top: 60px;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 
   ul {
