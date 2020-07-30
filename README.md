@@ -4,13 +4,12 @@
 
 ## MCUFLIX | Imersão Alura
 
-Project developed based on the week of immersion
+Project developed based on the week of immersion. You can access the project [here](https://mcuflix.vercel.app)
 
 
 ## 🚀 Index
 - ⚙ [Tecnologies](#-tecnologies)
 - 💻 [How to run](#-how-to-run)
-- 📷 [Previews](#-previews)
 
 ---
 
