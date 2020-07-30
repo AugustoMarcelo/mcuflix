@@ -1,13 +1,100 @@
-import React from 'react';
+import React, {
+  useState, ChangeEvent, FormEvent,
+} from 'react';
+import { uuid } from 'uuidv4';
+import { Link } from 'react-router-dom';
 
 import DefaultLayout from '../DefaultLayout';
+import { Input, Button } from '../../components/Form';
 
-const CreateMovie = () => {
+import { Content, Form, Title } from './styles';
+
+interface ICreateMovie {
+  title: string;
+  phase?: number | undefined;
+  cover_url: string;
+}
+
+const CreateMovie: React.FC = () => {
+  const [showMessage, setShowMessage] = useState(false);
+  const [formData, setFormData] = useState<ICreateMovie>({
+    title: '',
+    phase: undefined,
+    cover_url: '',
+  });
+
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    try {
+      const registeredMovies = localStorage.getItem('@mcuflix:movies');
+      let parsedRegisteredMovies = [];
+
+      if (registeredMovies) {
+        parsedRegisteredMovies = JSON.parse(registeredMovies);
+      }
+
+      const newMovie = { id: uuid(), ...formData };
+      const newRegisteredMovies = [...parsedRegisteredMovies, newMovie];
+
+      localStorage.setItem('@mcuflix:movies', JSON.stringify(newRegisteredMovies));
+
+      setFormData({
+        title: '',
+        phase: undefined,
+        cover_url: '',
+      });
+      setShowMessage(true);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <DefaultLayout>
-      <h1>Create Movie page</h1>
+      <Content>
+        <Title>Movies Registration</Title>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            label="Title"
+            name="title"
+            onChange={handleInputChange}
+            value={formData.title}
+          />
+          <Input
+            label="Phase"
+            name="phase"
+            type="number"
+            onChange={handleInputChange}
+            value={formData.phase}
+          />
+          <Input
+            label="Cover URL"
+            name="cover_url"
+            type="url"
+            onChange={handleInputChange}
+            value={formData.cover_url}
+          />
+
+          <Button title="Save" type="submit" />
+        </Form>
+        {showMessage && (
+          <Link to="/" className="box-message">
+            <strong>Movie successfully registered! Click to return to home page.</strong>
+          </Link>
+        )}
+      </Content>
     </DefaultLayout>
   );
-}
+};
 
 export default CreateMovie;
