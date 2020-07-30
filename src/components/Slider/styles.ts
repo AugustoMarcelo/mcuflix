@@ -18,7 +18,7 @@ export const Container = styled.ul`
       font-size: 30px;
     }
   }
-  
+
   .slick-prev {
     left: 0;
   }
@@ -34,6 +34,7 @@ export const SliderItem = styled.li`
   img {
     height: 320px;
     border-radius: 8px;
+    object-fit: cover;
   }
 
   &:hover,
