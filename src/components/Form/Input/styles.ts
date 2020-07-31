@@ -28,7 +28,7 @@ export const Container = styled.div<Props>`
     transition: border-color .3s;
 
     &:focus {
-      border-bottom-color: var(--primary);
+      border-bottom-color: var(--accent);
     }
 
     &:focus:not([type='color']) + span {

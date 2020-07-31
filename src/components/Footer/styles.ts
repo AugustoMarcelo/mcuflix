@@ -15,7 +15,7 @@ export const Container = styled.footer`
     > a {
       text-decoration: none;
       font-weight: 700;
-      color: #2A7AE4;
+      color: var(--accent);
     }
   }
 `;

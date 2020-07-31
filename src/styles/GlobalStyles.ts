@@ -10,6 +10,7 @@ export default createGlobalStyle`
 
   :root {
     --primary: #DB202C;
+    --accent: #2A7AE4;
     --black: #000000;
     --blackLighter: #9E9E9E;
     --grayLight: #F5F5F5;
@@ -31,10 +32,6 @@ export default createGlobalStyle`
   body {
     padding-top: 94px;
     background: #141414;
-
-    @media (max-width: 800px) {
-      padding-top: 60px;
-    }
   }
 
   a {
