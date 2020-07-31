@@ -7,11 +7,14 @@ import { Link } from 'react-router-dom';
 import DefaultLayout from '../DefaultLayout';
 import { Input, Button } from '../../components/Form';
 
-import { Content, Form, Title } from './styles';
+import {
+  Content, Form, Title, InputGroup,
+} from './styles';
 
 interface ICreateMovie {
   title: string;
   phase?: number | undefined;
+  trailer_url?: string;
   cover_url: string;
 }
 
@@ -20,6 +23,7 @@ const CreateMovie: React.FC = () => {
   const [formData, setFormData] = useState<ICreateMovie>({
     title: '',
     phase: undefined,
+    trailer_url: '',
     cover_url: '',
   });
 
@@ -51,6 +55,7 @@ const CreateMovie: React.FC = () => {
       setFormData({
         title: '',
         phase: undefined,
+        trailer_url: '',
         cover_url: '',
       });
       setShowMessage(true);
@@ -64,18 +69,27 @@ const CreateMovie: React.FC = () => {
       <Content>
         <Title>Movies Registration</Title>
         <Form onSubmit={handleSubmit}>
+          <InputGroup>
+            <Input
+              label="Title"
+              name="title"
+              onChange={handleInputChange}
+              value={formData.title}
+            />
+            <Input
+              label="Phase"
+              name="phase"
+              type="number"
+              onChange={handleInputChange}
+              value={formData.phase}
+            />
+          </InputGroup>
           <Input
-            label="Title"
-            name="title"
+            label="Trailer URL"
+            name="trailer_url"
+            type="url"
             onChange={handleInputChange}
-            value={formData.title}
-          />
-          <Input
-            label="Phase"
-            name="phase"
-            type="number"
-            onChange={handleInputChange}
-            value={formData.phase}
+            value={formData.trailer_url}
           />
           <Input
             label="Cover URL"

@@ -40,3 +40,9 @@ export const Form = styled.form`
   flex-direction: column;
   width: 100%;
 `;
+
+export const InputGroup = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+`;
