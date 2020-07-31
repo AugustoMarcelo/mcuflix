@@ -7,7 +7,7 @@ export const Container = styled.ul`
 
   .slick-prev,
   .slick-next {
-    z-index: 50;
+    z-index: 10;
     top: 0;
     bottom: 0;
     margin: auto;
@@ -35,6 +35,7 @@ export const SliderItem = styled.li`
     height: 320px;
     border-radius: 8px;
     object-fit: cover;
+    cursor: pointer;
   }
 
   &:hover,

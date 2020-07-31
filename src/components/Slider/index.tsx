@@ -8,7 +8,7 @@ const Slider: React.FC = ({ children }) => (
     <SlickSlider
       dots={false}
       speed={300}
-      infinite={React.Children.count(children) > 1}
+      infinite={React.Children.count(children) > 5}
       variableWidth
       adaptiveHeight
     >

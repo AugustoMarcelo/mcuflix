@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header`
   width: 100%;
   height: 94px;
-  z-index: 100;
+  z-index: 20;
 
   display: flex;
   justify-content: space-between;
@@ -26,7 +26,7 @@ export const Container = styled.header`
   @media (max-width: 800px) {
     height: 60px;
     justify-content: center;
-    
+
     img {
       max-width: 105px;
     }
