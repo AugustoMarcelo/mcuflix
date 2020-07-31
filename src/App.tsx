@@ -4,13 +4,11 @@ import GlobalStyles from './styles/GlobalStyles';
 
 import Routes from './routes';
 
-const App: React.FC = () => {
-  return (
-    <>
-      <Routes />
-      <GlobalStyles/>
-    </>
-  );
-}
+const App: React.FC = () => (
+  <>
+    <Routes />
+    <GlobalStyles />
+  </>
+);
 
 export default App;
