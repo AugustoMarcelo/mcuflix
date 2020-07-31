@@ -19,7 +19,7 @@ export const VideoList = styled.ul`
 
   padding: 32px 0;
   overflow-x: auto;
-  
+
   li {
     margin-right: 16px;
     transition: opacity 0.2s;
@@ -33,6 +33,5 @@ export const VideoList = styled.ul`
     &:focus {
       opacity: .5;
     }
-    
   }
 `;
