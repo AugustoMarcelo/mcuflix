@@ -51,7 +51,7 @@ const ShowMovieModal: React.FC<IModalProps> = ({ isOpen, setIsOpen, movieInfo })
           <a
             href={movieInfo.trailer_url}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Watch the trailer
           </a>

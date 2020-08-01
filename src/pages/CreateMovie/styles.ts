@@ -6,7 +6,7 @@ export const Content = styled.div`
   align-items: center;
 
   margin: 10px auto;
-  width: 100%;
+  width: 95%;
   max-width: 600px;
 
   .box-message {
@@ -45,4 +45,8 @@ export const InputGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
+
+  @media(max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 `;

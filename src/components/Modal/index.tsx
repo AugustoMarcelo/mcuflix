@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import ReactModal from 'react-modal';
+// import ReactModal from 'react-modal';
+
+import { ReactModalResponsive } from './styles';
 
 interface IModalProps {
   children: any;
@@ -16,7 +18,7 @@ const Modal: React.FC<IModalProps> = ({ children, isOpen, setIsOpen }) => {
   }, [isOpen]);
 
   return (
-    <ReactModal
+    <ReactModalResponsive
       shouldCloseOnOverlayClick={!false}
       onRequestClose={setIsOpen}
       isOpen={modalStatus}
@@ -39,11 +41,12 @@ const Modal: React.FC<IModalProps> = ({ children, isOpen, setIsOpen }) => {
         overlay: {
           backgroundColor: '#121214e6',
           zIndex: 20,
+          overflowY: 'auto',
         },
       }}
     >
       {children}
-    </ReactModal>
+    </ReactModalResponsive>
   );
 };
 

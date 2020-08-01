@@ -10,9 +10,14 @@ export const Content = styled.div`
   padding: 20px;
 
   img {
-    height: 350px;
+    height: 400px;
     border: 2px solid white;
     border-radius: 4px;
+    object-fit: contain;
+  }
+
+  @media(max-width: 800px) {
+    flex-direction: column;
   }
 `;
 
@@ -58,5 +63,10 @@ export const Info = styled.div<IMovieInfoProps>`
     &:hover {
       opacity: 0.3;
     }
+  }
+
+  @media(max-width: 800px) {
+    margin-left: 0;
+    margin-top: 10px;
   }
 `;

@@ -16,4 +16,8 @@ export const ButtonContainer = styled.button`
   &:hover {
     opacity: 0.6;
   }
+
+  @media(max-width: 800px) {
+    align-self: stretch;
+  }
 `;
