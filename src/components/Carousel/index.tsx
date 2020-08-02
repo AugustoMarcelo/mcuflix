@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsStopwatchFill } from 'react-icons/bs';
 
 import Slider from '../Slider';
 import { SliderItem } from '../Slider/styles';
@@ -18,6 +19,15 @@ const Carousel: React.FC<Props> = ({ title, movies, showMovieInfo }) => (
     <Slider>
       {movies.map((movie) => (
         <SliderItem key={movie.id} onClick={() => showMovieInfo(movie)}>
+          {movie.chronology && (
+            <span>
+              <BsStopwatchFill size={20} />
+              <strong>
+                {movie.chronology}
+                º
+              </strong>
+            </span>
+          )}
           <img src={movie.cover_url} alt="Movie cover" />
         </SliderItem>
       ))}

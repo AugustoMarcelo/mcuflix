@@ -29,17 +29,45 @@ export const Container = styled.ul`
 
 export const SliderItem = styled.li`
   margin-right: 16px;
-  transition: opacity 0.2s;
+  position: relative;
+  overflow: hidden;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    left: -11rem;
+    top: 0;
+    z-index: 5;
+    transition: transform 400ms linear;
+    color: #111;
+    background: #f5f5f5;
+    padding: 10px;
+    border-bottom-right-radius: 5px;
+
+    strong {
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  }
 
   img {
     height: 320px;
     border-radius: 8px;
     object-fit: cover;
     cursor: pointer;
+    transition: opacity 0.2s;
   }
 
   &:hover,
   &:focus {
-    opacity: .5;
+    img {
+      opacity: .5;
+    }
+
+    span {
+      transform: translateX(11rem);
+    }
   }
 `;
