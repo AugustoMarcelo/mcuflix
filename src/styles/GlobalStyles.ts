@@ -34,6 +34,20 @@ export default createGlobalStyle`
     background: #141414;
   }
 
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 10px;
+  }
+
   a {
     text-decoration: none;
   }
