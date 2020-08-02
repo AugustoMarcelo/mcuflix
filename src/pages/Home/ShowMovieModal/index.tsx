@@ -22,7 +22,7 @@ const ShowMovieModal: React.FC<IModalProps> = ({ isOpen, setIsOpen, movieInfo })
     [movieInfo.box_office],
   );
 
-  const getMoreInfo = useMemo(() => movieInfo.phase && `
+  const getMoreInfo = useMemo(() => movieInfo.box_office && movieInfo.box_office > 0 && `
     The film was released in ${getYear}, raising ${getFormattedBoxOffice}
     at the box office. It is part of phase ${movieInfo.phase}
     in the ${movieInfo.saga}. It also has ${movieInfo.post_credit_scenes}
