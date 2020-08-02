@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { isAfter } from 'date-fns';
 
 import api from '../../services/api';
 
@@ -14,10 +15,11 @@ export interface IMovie {
   title: string;
   phase: number;
   saga?: string;
-  trailer_url?: string;
   overview?: string;
   cover_url: string;
+  chronology?: number;
   box_office?: number;
+  trailer_url?: string;
   directed_by?: string;
   release_date?: Date;
   post_credit_scenes?: string;
@@ -30,6 +32,7 @@ const Home: React.FC = () => {
   const [phaseOne, setPhaseOne] = useState<IMovie[]>([]);
   const [phaseTwo, setPhaseTwo] = useState<IMovie[]>([]);
   const [phaseThree, setPhaseThree] = useState<IMovie[]>([]);
+  const [phaseFour, setPhaseFour] = useState<IMovie[]>([]);
   const [comingSoon, setComingSoon] = useState<IMovie[]>([]);
 
   useEffect(() => {
@@ -39,7 +42,11 @@ const Home: React.FC = () => {
       setPhaseOne(data.data.filter((movie) => movie.phase === 1));
       setPhaseTwo(data.data.filter((movie) => movie.phase === 2));
       setPhaseThree(data.data.filter((movie) => movie.phase === 3));
-      setComingSoon(data.data.filter((movie) => movie.phase === null));
+      setPhaseFour(data.data.filter((movie) => movie.phase === 4));
+
+      setComingSoon(data.data.filter(
+        (movie) => movie.release_date && isAfter(new Date(movie.release_date), new Date()),
+      ));
 
       const registeredMovies = localStorage.getItem('@mcuflix:movies');
 
@@ -72,6 +79,7 @@ const Home: React.FC = () => {
           <Carousel title="Phase One" movies={phaseOne} showMovieInfo={showMovieInfo} />
           <Carousel title="Phase Two" movies={phaseTwo} showMovieInfo={showMovieInfo} />
           <Carousel title="Phase Three" movies={phaseThree} showMovieInfo={showMovieInfo} />
+          <Carousel title="Phase Four" movies={phaseFour} showMovieInfo={showMovieInfo} />
 
           <Carousel title="Coming Soon" movies={comingSoon} showMovieInfo={showMovieInfo} />
         </>
