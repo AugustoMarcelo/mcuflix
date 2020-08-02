@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: flex-end;
 
   color: var(--white);
+  margin-bottom: 20px;
   height: 60vh;
   position: relative;
   background: url('https://i.ytimg.com/vi/mN_e5-fcGU4/maxresdefault.jpg') no-repeat;

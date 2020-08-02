@@ -10,7 +10,9 @@ export const Container = styled.section`
 export const Title = styled.h2`
   display: inline;
   padding-bottom: 10px;
-  border-bottom: 2px solid #fff;
+  border: 2px solid #fff;
+  padding: 10px;
+  border-radius: 5px;
 `;
 
 export const VideoList = styled.ul`
